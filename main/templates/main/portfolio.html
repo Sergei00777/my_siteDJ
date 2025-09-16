@@ -1,25 +1,277 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Портфолио - Мое Портфолио{% endblock %}
+{% block title %}Портфолио - Творческое пространство{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Мое Портфолио</h1>
-</div>
-
-<div class="content-section">
-    {% if portfolio_items %}
-        {% for item in portfolio_items %}
-        <div class="portfolio-item">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-            {% if item.link %}
-                <a href="{{ item.link }}" target="_blank">Посмотреть проект</a>
-            {% endif %}
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Творческое пространство</h1>
+            <p class="tagline">Мои проекты · Мои идеи · Мой мир</p>
         </div>
-        {% endfor %}
-    {% else %}
-        <p>Проекты скоро появится в портфолио.</p>
-    {% endif %}
-</div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="content-section">
+        <div class="portfolio-grid">
+            <!-- Communal-Apartment -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Communal-Apartment</h3>
+                    <p>Система учёта платежей за ЖКУ с прогнозированием расходов.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR-Department -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>HR-Department</h3>
+                    <p>CRM для кадрового учёта с аналитикой отпусков/больничных.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">React</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MYcar -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>MYcar</h3>
+                    <p>Сервис для учёта затрат на автомобиль с интеграцией VIN-декодера и API АЗС.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIN-парсер -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>VIN-парсер</h3>
+                    <p>Парсер данных об авто по VIN. Использовался в проекте «I Avto Expert».</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Requests</span>
+                        <span class="tech-tag">BeautifulSoup</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit Calculator -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Credit Calculator</h3>
+                    <p>Микросервис расчёта кредитных платежей с REST API.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">REST</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIN Checker Pro -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>VIN Checker Pro</h3>
+                    <p>Система проверки информации об автомобилях по VIN-номеру с интеграцией онлайн-сервисов.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Analytics Dashboard -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Car Analytics Dashboard</h3>
+                    <p>Система для анализа данных об автомобилях с визуализацией статистики.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elizabeth Bot -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Elizabeth Bot</h3>
+                    <p>AI-автор для Telegram-канала на основе API Mistral AI.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">Telegram</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DROM парсер -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Парсер Drom.ru</h3>
+                    <p>Программа с графическим интерфейсом для парсинга автомобильных объявлений.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyQt5</span>
+                        <span class="tech-tag">Парсинг</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bitcoin Tracker -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Bitcoin Price Tracker</h3>
+                    <p>Трекер курса Bitcoin для аналитики с графиком изменений.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">API</span>
+                        <span class="tech-tag">Графики</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ModernPDFEditor -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>ModernPDFEditor</h3>
+                    <p>Редактор PDF с возможностью создания и редактирования документов.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyPDF2</span>
+                        <span class="tech-tag">ReportLab</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password Manager -->
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Password Manager</h3>
+                    <p>Генератор и менеджер паролей с безопасным хранением.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Security</span>
+                        <span class="tech-tag">Encryption</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-section skills-section">
+        <div class="cta-content">
+            <h2>Заинтересованы в сотрудничестве?</h2>
+            <p>Я всегда открыт для обсуждения новых проектов и интересных идей</p>
+            <a href="/contacts" class="cta-button">Связаться со мной</a>
+        </div>
+    </section>
+</main>
+
+<style>
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.portfolio-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-content h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-content {
+    text-align: center;
+    color: white;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-card {
+        padding: 1.5rem;
+    }
+}
+</style>
 {% endblock %}

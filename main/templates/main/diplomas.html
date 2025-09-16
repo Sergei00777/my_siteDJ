@@ -1,23 +1,58 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block title %}Дипломы - Мое Портфолио{% endblock %}
 
 {% block content %}
-<div class="page-header">
+<!-- Используем новый класс для заголовка -->
+<div class="diploma-page-header">
     <h1>Мои Дипломы и Сертификаты</h1>
 </div>
 
-<div class="content-section">
+<div class="diplomas-container">
     {% if diplomas %}
         {% for diploma in diplomas %}
-        <div class="diploma-item">
-            <h3>{{ diploma.title }}</h3>
-            <p><strong>Учреждение:</strong> {{ diploma.institution }}</p>
-            <p><strong>Год:</strong> {{ diploma.year }}</p>
+        <div class="diploma-card" style="animation-delay: {{ forloop.counter0|add:0.1 }}s">
+            {% if forloop.first %}
+            <div class="diploma-badge">Новый</div>
+            {% endif %}
+
+            <div class="diploma-image-container">
+                <img src="{% static 'main/images/' %}{{ diploma.file }}"
+                     alt="{{ diploma.title }}"
+                     class="diploma-image"
+                     onerror="this.src='{% static 'main/images/placeholder.jpg' %}'">
+
+                <div class="diploma-overlay">
+                    <a href="{% static 'main/images/' %}{{ diploma.file }}"
+                       target="_blank"
+                       class="view-button">
+                        👁️ Посмотреть
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="diploma-title">{{ diploma.title }}</h3>
+
+            <div class="diploma-info">
+                <span class="diploma-icon">🏫</span>
+                <strong>Учреждение:</strong> {{ diploma.institution }}
+            </div>
+
+            <div class="diploma-info">
+                <span class="diploma-icon">📅</span>
+                <strong>Год получения:</strong>
+            </div>
+
+            <div class="diploma-year">
+                <span>🎯</span> {{ diploma.year }}
+            </div>
         </div>
         {% endfor %}
     {% else %}
-        <p>Информация о дипломах скоро появится.</p>
+        <div style="text-align: center; color: #666; font-size: 1.2em; grid-column: 1 / -1;">
+            <p>Информация о дипломах скоро появится...</p>
+        </div>
     {% endif %}
 </div>
 {% endblock %}

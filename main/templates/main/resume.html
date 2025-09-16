@@ -1,31 +1,154 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Резюме - Мое Портфолио{% endblock %}
+{% block title %}Резюме - Сергей Петрусенко{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Мое Резюме</h1>
-</div>
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Сергей Петрусенко</h1>
+            <p class="tagline">Backend-разработчик Python | 3+ года опыта</p>
+            <p>Создаю надежные и масштабируемые системы с акцентом на производительность, безопасность и чистую архитектуру.</p>
+        </div>
+    </section>
 
-<div class="content-section">
-    <h2>Опыт работы</h2>
-    <div class="experience-item">
-        <h3>Ведущий разработчик</h3>
-        <p><strong>IT Компания</strong> | 2022 - настоящее время</p>
-        <p>Разработка и поддержка веб-приложений на Django</p>
-    </div>
-    <div class="experience-item">
-        <h3>Junior разработчик</h3>
-        <p><strong>Стартап</strong> | 2020 - 2022</p>
-        <p>Участие в разработке различных проектов</p>
-    </div>
-</div>
+    <!-- Skills Section -->
+    <section class="content-section skills-section">
+        <h2>🛠️ Технические навыки</h2>
 
-<div class="content-section">
-    <h2>Образование</h2>
-    <div class="education-item">
-        <h3>Технический Университет</h3>
-        <p><strong>Компьютерные науки</strong> | 2016 - 2020</p>
-    </div>
-</div>
+        <div class="skill-category">
+            <h3>Backend-разработка</h3>
+            <div class="skill-items">
+                <span class="skill-item">Django</span>
+                <span class="skill-item">FastAPI</span>
+                <span class="skill-item">Flask</span>
+                <span class="skill-item">Celery</span>
+                <span class="skill-item">Pydantic</span>
+                <span class="skill-item">Starlette</span>
+                <span class="skill-item">Микросервисы</span>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Python разработка</h3>
+            <div class="skill-items">
+                <span class="skill-item">ООП</span>
+                <span class="skill-item">Асинхронное программирование</span>
+                <span class="skill-item">Виртуальные окружения</span>
+                <span class="skill-item">Git</span>
+                <span class="skill-item">Телеграм-боты</span>
+                <span class="skill-item">Парсинг данных</span>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Базы данных</h3>
+            <div class="skill-items">
+                <span class="skill-item">PostgreSQL</span>
+                <span class="skill-item">MySQL</span>
+                <span class="skill-item">Redis</span>
+                <span class="skill-item">Django ORM</span>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>DevOps & Инструменты</h3>
+            <div class="skill-items">
+                <span class="skill-item">Docker</span>
+                <span class="skill-item">Kubernetes</span>
+                <span class="skill-item">Linux</span>
+                <span class="skill-item">Pytest</span>
+                <span class="skill-item">Factory Boy</span>
+                <span class="skill-item">HTTPX</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section class="content-section skills-section">
+        <h2>🌟 Личные качества</h2>
+
+        <div class="skill-items">
+            <span class="skill-item">Аналитическое мышление</span>
+            <span class="skill-item">Командная работа</span>
+            <span class="skill-item">Быстрая обучаемость</span>
+            <span class="skill-item">Ответственность</span>
+            <span class="skill-item">Креативность</span>
+            <span class="skill-item">Организованность</span>
+            <span class="skill-item">Решение проблем</span>
+            <span class="skill-item">Тайм-менеджмент</span>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="content-section skills-section">
+        <h2>🚀 Ключевые проекты</h2>
+
+        <div class="skill-category">
+            <h3>Car Auction Bot – AI-аукционный бот для автосалонов</h3>
+            <p>Коммерчески успешный проект с реальным внедрением. Внедрен в 7 коммерческих автосалонов (63% рынка Иркутска).</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>FinTech: Платежная система с высокой нагрузкой</h3>
+            <p>Разработка API для обработки транзакций с использованием Python и Redis.</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>VKinder - интеллектуальный бот-сваха</h3>
+            <p>Анализирует профили пользователей ВКонтакте и предлагает персонализированные варианты для знакомств.</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Соцсеть: Чат на Django с WebSockets</h3>
+            <p>Реализация реального времени с помощью Channels и ASGI.</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Communal-Apartment: Система учёта ЖКУ</h3>
+            <p>Система учёта платежей за ЖКУ с прогнозированием расходов.</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Logistics_Avto: Система учета автомобилей</h3>
+            <p>Мощная программа на Python с PyQt5 для учета и логистики автомобилей.</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>MYcar: Сервис учёта затрат на автомобиль</h3>
+            <p>Интеграции с VIN-декодером и API АЗС.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="content-section skills-section">
+        <h2>💼 Опыт работы</h2>
+
+        <div class="skill-category">
+            <h3>Ведущий разработчик Python</h3>
+            <p><strong>IT Компания</strong> | 2022 - настоящее время</p>
+            <p>Разработка и поддержка высоконагруженных веб-приложений, архитектурное проектирование, руководство командой.</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Backend-разработчик</h3>
+            <p><strong>Стартап</strong> | 2020 - 2022</p>
+            <p>Участие в разработке различных проектов, реализация API, работа с базами данных, оптимизация производительности.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="content-section skills-section">
+        <h2>🎓 Образование</h2>
+
+        <div class="skill-category">
+            <h3>Технический Университет</h3>
+            <p><strong>Компьютерные науки</strong> | 2005 - 2010</p>
+            <p>Фундаментальное образование в области программирования, алгоритмов и структур данных.</p>
+        </div>
+    </section>
+
+
+</main>
 {% endblock %}

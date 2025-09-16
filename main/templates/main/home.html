@@ -19,83 +19,111 @@
     </div>
 
     <div class="hero-content">
-        <h1>Сергей Петрусенко</h1>
+        <h1>Сергей Петрусенko</h1>
         <p>Backend разработчик | Python разработчик | Full-stack разработчик</p>
         <p>Создаю современные и функциональные веб-приложения</p>
     </div>
 </section>
 
-<!-- Остальной код остается без изменений -->
-<section class="skills-section">
-    <h2>Мои навыки</h2>
+<!-- Skills Section -->
+<section class="skills-section" style="padding: 2rem 0;">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Мои навыки</h2>
 
-    <div class="skill-category">
-        <h3>Backend разработка</h3>
-        <div class="skill-items">
-            <span class="skill-item">Django</span>
-            <span class="skill-item">FastAPI</span>
-            <span class="skill-item">Flask</span>
-            <span class="skill-item">Celery</span>
-            <span class="skill-item">Pydantic</span>
-            <span class="skill-item">Starlette</span>
-            <span class="skill-item">PyQt5</span>
-            <span class="skill-item">Tkinter</span>
-            <span class="skill-item">Kivy</span>
-            <span class="skill-item">PyGame</span>
-        </div>
-    </div>
+    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
 
-    <div class="skill-category">
-        <h3>Python разработка</h3>
-        <div class="skill-items">
-            <span class="skill-item">Базовый синтаксис</span>
-            <span class="skill-item">ООП</span>
-            <span class="skill-item">Модули и пакеты</span>
-            <span class="skill-item">Git</span>
-            <span class="skill-item">Виртуальные окружения</span>
-            <span class="skill-item">Телеграм-боты</span>
-            <span class="skill-item">Парсеры данных</span>
+        <!-- Backend разработка -->
+        <div class="skill-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 1.5rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">⚙️</span>
+                Backend разработка
+            </h3>
+            <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                <span class="skill-badge">Django</span>
+                <span class="skill-badge">FastAPI</span>
+                <span class="skill-badge">Flask</span>
+                <span class="skill-badge">Celery</span>
+                <span class="skill-badge">Pydantic</span>
+                <span class="skill-badge">Starlette</span>
+                <span class="skill-badge">PyQt5</span>
+                <span class="skill-badge">Tkinter</span>
+                <span class="skill-badge">Kivy</span>
+                <span class="skill-badge">PyGame</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-category">
-        <h3>Базы данных</h3>
-        <div class="skill-items">
-            <span class="skill-item">PostgreSQL</span>
-            <span class="skill-item">MySQL</span>
-            <span class="skill-item">Redis</span>
-            <span class="skill-item">Django ORM</span>
+        <!-- Python разработка -->
+        <div class="skill-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 15px; padding: 1.5rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">🐍</span>
+                Python разработка
+            </h3>
+            <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                <span class="skill-badge">Базовый синтаксис</span>
+                <span class="skill-badge">ООП</span>
+                <span class="skill-badge">Модули и пакеты</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">Виртуальные окружения</span>
+                <span class="skill-badge">Телеграм-боты</span>
+                <span class="skill-badge">Парсеры данных</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-category">
-        <h3>DevOps</h3>
-        <div class="skill-items">
-            <span class="skill-item">Docker</span>
-            <span class="skill-item">Kubernetes</span>
-            <span class="skill-item">Linux администрирование</span>
-            <span class="skill-item">CI/CD настройка</span>
+        <!-- Базы данных -->
+        <div class="skill-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 15px; padding: 1.5rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">🗄️</span>
+                Базы данных
+            </h3>
+            <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Redis</span>
+                <span class="skill-badge">Django ORM</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-category">
-        <h3>Тестирование</h3>
-        <div class="skill-items">
-            <span class="skill-item">Pytest</span>
-            <span class="skill-item">Factory Boy</span>
-            <span class="skill-item">HTTPX</span>
+        <!-- DevOps -->
+        <div class="skill-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 15px; padding: 1.5rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">🚀</span>
+                DevOps
+            </h3>
+            <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Kubernetes</span>
+                <span class="skill-badge">Linux администрирование</span>
+                <span class="skill-badge">CI/CD настройка</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-category">
-        <h3>Софт-скиллы</h3>
-        <div class="skill-items">
-            <span class="skill-item">Коммуникация</span>
-            <span class="skill-item">Работа в команде</span>
-            <span class="skill-item">Поиск информации</span>
-            <span class="skill-item">Решение проблем</span>
-            <span class="skill-item">Тайм-менеджмент</span>
+        <!-- Тестирование -->
+        <div class="skill-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 15px; padding: 1.5rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">🧪</span>
+                Тестирование
+            </h3>
+            <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                <span class="skill-badge">Pytest</span>
+                <span class="skill-badge">Factory Boy</span>
+                <span class="skill-badge">HTTPX</span>
+            </div>
         </div>
+
+        <!-- Софт-скиллы -->
+        <div class="skill-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 15px; padding: 1.5rem; color: #333; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">💡</span>
+                Софт-скиллы
+            </h3>
+            <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                <span class="skill-badge" style="background: rgba(0,0,0,0.1);">Коммуникация</span>
+                <span class="skill-badge" style="background: rgba(0,0,0,0.1);">Работа в команде</span>
+                <span class="skill-badge" style="background: rgba(0,0,0,0.1);">Поиск информации</span>
+                <span class="skill-badge" style="background: rgba(0,0,0,0.1);">Решение проблем</span>
+                <span class="skill-badge" style="background: rgba(0,0,0,0.1);">Тайм-менеджмент</span>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -223,6 +251,28 @@
 .profile-photo:hover img {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Skill badges */
+.skill-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Skill card hover effects */
+.skill-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
 }
 </style>
 {% endblock %}

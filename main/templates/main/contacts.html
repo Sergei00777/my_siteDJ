@@ -3,17 +3,516 @@
 {% block title %}Контакты - Мое Портфолио{% endblock %}
 
 {% block content %}
+{% load static %}
 <div class="page-header">
     <h1>Контакты</h1>
+    <p class="header-subtitle">Свяжитесь со мной для обсуждения вашего проекта</p>
 </div>
 
-<div class="content-section">
-    {% if profile %}
-        <h2>Свяжитесь со мной</h2>
-        <p><strong>Email:</strong> {{ profile.email }}</p>
-        <p><strong>Телефон:</strong> {{ profile.phone }}</p>
-    {% else %}
-        <p>Контактная информация скоро появится.</p>
-    {% endif %}
-</div>
+<div class="contact-section">
+    <!-- Блок с фото и основной информацией -->
+    <div class="profile-section">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="/static/main/images/profile_photo.jpg" alt="Сергей" class="profile-photo">
+                <div class="status-indicator"></div>
+            </div>
+            <div class="profile-info">
+                <h2>Сергей</h2>
+                <p class="profile-title">Профессия/Должность</p>
+                <p class="profile-description">Создаю цифровые решения для вашего бизнеса</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контактная информация в grid -->
+    <div class="contact-grid">
+        <!-- Контактная информация -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+                <h3>📍 Местоположение</h3>
+                <p>Россия, Иркутская область, г. Иркутск</p>
+            </div>
+        </div>
+
+        <!-- Телефон -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+                <h3>📞 Телефон</h3>
+                <p><a href="tel:+79041111481">8 (904) 111-14-81</a></p>
+                <div class="warning-badge">Только по рабочим вопросам</div>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+                <h3>📧 Email</h3>
+                <p><a href="mailto:on007@mail.ru">on007@mail.ru</a></p>
+            </div>
+        </div>
+
+        <!-- Время работы -->
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+                <h3>🕐 Время работы</h3>
+                <p><strong>Пн-Пт:</strong> 9:00 - 18:00</p>
+                <p>по иркутскому времени (GMT+8)</p>
+                <p class="small-text">Отвечаю в течение 24 часов. Для срочных вопросов — звоните!</p>
+            </div>
+        </div>
+    </div> <!-- Закрытие .contact-grid -->
+
+    <!-- Мессенджеры -->
+    <div class="messengers-section">
+        <h2>💬 Напишите мне в мессенджер</h2>
+        <div class="social-buttons">
+            <a href="#" class="social-btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="#" class="social-btn telegram">
+                <i class="fab fa-telegram"></i>
+                <span>Telegram</span>
+            </a>
+            <a href="#" class="social-btn viber">
+                <i class="fab fa-viber"></i>
+                <span>Viber</span>
+            </a>
+            <a href="#" class="social-btn vk">
+                <i class="fab fa-vk"></i>
+                <span>ВКонтакте</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- QR код - ОТДЕЛЬНАЯ СЕКЦИЯ -->
+    <div class="qr-section">
+        <h3>📱 Сохраните контакты</h3>
+        <div class="qr-code">
+            <!-- ВСТАВЛЯЕМ НАСТОЯЩИЙ QR-КОД -->
+            <img src="{% static 'main/images/qrcode.png' %}" alt="QR Code с контактами" width="120">
+        </div>
+        <p>Отсканируйте QR-код</p>
+    </div>
+</div> <!-- Закрытие .contact-section -->
+
+<style>
+/* Обновленные стили для более солидного вида */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.contact-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    animation: fadeInUp 0.8s ease-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для профиля с фото */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-image {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CD964;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-info h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.profile-title {
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.profile-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.5rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    animation: slideInLeft 0.6s ease-out;
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-card:nth-child(2) { animation-delay: 0.1s; }
+.contact-card:nth-child(3) { animation-delay: 0.2s; }
+.contact-card:nth-child(4) { animation-delay: 0.3s; }
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-details h3 {
+    color: white;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.contact-details p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.contact-details a {
+    color: #00a8ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-details a:hover {
+    color: #0088cc;
+    text-decoration: underline;
+}
+
+/* Секция мессенджеров */
+.messengers-section {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    animation: fadeIn 0.8s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.messengers-section h2 {
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+/* Обновленные стили для социальных кнопок */
+.social-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-btn {
+    padding: 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.social-btn span {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    font-weight: 500;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.7s;
+}
+
+.social-btn:hover::before {
+    left: 100%;
+}
+
+.social-btn.whatsapp {
+    color: #25D366;
+    border-bottom: 3px solid #25D366;
+}
+
+.social-btn.telegram {
+    color: #0088cc;
+    border-bottom: 3px solid #0088cc;
+}
+
+.social-btn.viber {
+    color: #7360F2;
+    border-bottom: 3px solid #7360F2;
+}
+
+.social-btn.vk {
+    color: #4a76a8;
+    border-bottom: 3px solid #4a76a8;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* QR код секция */
+.qr-section {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    animation: fadeIn 1s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qr-section h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.qr-code {
+    /* УБИРАЕМ фиксированную ширину и высоту */
+    /* width: 160px; */
+    /* height: 160px; */
+    /* УБИРАЕМ фон, так как он теперь у изображения */
+    /* background: white; */
+    border-radius: 12px;
+    margin: 1.5rem auto;
+    /* УБИРАЕМ flex, так как теперь у нас только картинка */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* УБИРАЕМ стили для шрифта, так как иконки больше нет */
+    /* font-size: 3.5rem; */
+    /* color: #333; */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Делаем контейнер по размеру содержимого */
+    display: inline-block;
+}
+
+/* Добавляем стили для самого изображения внутри .qr-code */
+.qr-code img {
+    display: block; /* Убирает лишние отступы вокруг картинки */
+    border-radius: 12px; /* Закругление для самой картинки */
+    width: 160px; /* Можно задать размер здесь, или оставить width="120" в HTML */
+    height: 160px;
+}
+
+.qr-code:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Предупреждающий бейдж */
+.warning-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.8rem;
+    animation: pulse 2s infinite;
+}
+
+.small-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        padding: 1.5rem;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        align-self: center;
+    }
+}
+</style>
+
+<!-- Font Awesome для иконок -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+// Добавляем анимации при скролле
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Наблюдаем за всеми анимируемыми элементами
+    document.querySelectorAll('.contact-card, .messengers-section, .qr-section, .profile-card')
+        .forEach(el => observer.observe(el));
+});
+</script>
 {% endblock %}
