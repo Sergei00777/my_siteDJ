@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Контакты - Мое Портфолио{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Контакты</h1>
+</div>
+
+<div class="content-section">
+    {% if profile %}
+        <h2>Свяжитесь со мной</h2>
+        <p><strong>Email:</strong> {{ profile.email }}</p>
+        <p><strong>Телефон:</strong> {{ profile.phone }}</p>
+    {% else %}
+        <p>Контактная информация скоро появится.</p>
+    {% endif %}
+</div>
+{% endblock %}

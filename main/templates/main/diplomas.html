@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Дипломы - Мое Портфолио{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Мои Дипломы и Сертификаты</h1>
+</div>
+
+<div class="content-section">
+    {% if diplomas %}
+        {% for diploma in diplomas %}
+        <div class="diploma-item">
+            <h3>{{ diploma.title }}</h3>
+            <p><strong>Учреждение:</strong> {{ diploma.institution }}</p>
+            <p><strong>Год:</strong> {{ diploma.year }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Информация о дипломах скоро появится.</p>
+    {% endif %}
+</div>
+{% endblock %}

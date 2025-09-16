@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Навыки - Мое Портфолио{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Мои Навыки</h1>
+</div>
+
+<div class="content-section">
+    {% if skills %}
+        {% for skill in skills %}
+        <div class="skill-item">
+            <h3>{{ skill.name }}</h3>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: {{ skill.level }}%;">
+                    {{ skill.level }}%
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Информация о навыках скоро появится.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+my_site/
+├── manage.py
+├── my_site/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── main/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations/
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── main/
+│           ├── base.html
+│           ├── home.html
+│           ├── resume.html
+│           ├── about.html
+│           ├── portfolio.html
+│           ├── skills.html
+│           ├── diplomas.html
+│           └── contacts.html
+├── static/
+│   └── main/
+│       ├── css/
+│       │   └── style.css
+│       └── images/
+└── templates/
+    └── admin/

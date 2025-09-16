@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Портфолио - Мое Портфолио{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Мое Портфолио</h1>
+</div>
+
+<div class="content-section">
+    {% if portfolio_items %}
+        {% for item in portfolio_items %}
+        <div class="portfolio-item">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            {% if item.link %}
+                <a href="{{ item.link }}" target="_blank">Посмотреть проект</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Проекты скоро появится в портфолио.</p>
+    {% endif %}
+</div>
+{% endblock %}
