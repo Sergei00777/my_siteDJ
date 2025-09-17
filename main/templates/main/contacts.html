@@ -100,7 +100,7 @@
 
     <!-- QR код - ОТДЕЛЬНАЯ СЕКЦИЯ -->
     <div class="qr-section">
-        <h3>📱 Сохраните контакты</h3>
+        <h3>📱 MAX</h3>
         <div class="qr-code">
             <!-- ВСТАВЛЯЕМ НАСТОЯЩИЙ QR-КОД -->
             <img src="{% static 'main/images/qrcode.png' %}" alt="QR Code с контактами" width="120">
@@ -182,8 +182,9 @@
     font-size: 1.8rem;
 }
 
+/* ИЗМЕНЕНО: цвет профессии/должности на черный */
 .profile-title {
-    color: #667eea;
+    color: #000000; /* Черный цвет вместо #667eea */
     font-weight: 500;
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
@@ -222,10 +223,11 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* ИЗМЕНЕНО: цвет иконок на черный */
 .contact-icon {
     margin-right: 1rem;
     font-size: 1.5rem;
-    color: #667eea;
+    color: #000000; /* Черный цвет вместо #667eea */
     background: rgba(102, 126, 234, 0.1);
     width: 50px;
     height: 50px;
@@ -246,15 +248,16 @@
     line-height: 1.6;
 }
 
+/* ИЗМЕНЕНО: цвет телефона и email на черный */
 .contact-details a {
-    color: #00a8ff;
+    color: #000000; /* Черный цвет вместо #00a8ff */
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 500;
 }
 
 .contact-details a:hover {
-    color: #0088cc;
+    color: #333333; /* Темно-серый при наведении */
     text-decoration: underline;
 }
 
@@ -366,32 +369,18 @@
 }
 
 .qr-code {
-    /* УБИРАЕМ фиксированную ширину и высоту */
-    /* width: 160px; */
-    /* height: 160px; */
-    /* УБИРАЕМ фон, так как он теперь у изображения */
-    /* background: white; */
     border-radius: 12px;
     margin: 1.5rem auto;
-    /* УБИРАЕМ flex, так как теперь у нас только картинка */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* УБИРАЕМ стили для шрифта, так как иконки больше нет */
-    /* font-size: 3.5rem; */
-    /* color: #333; */
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Делаем контейнер по размеру содержимого */
     display: inline-block;
 }
 
-/* Добавляем стили для самого изображения внутри .qr-code */
 .qr-code img {
-    display: block; /* Убирает лишние отступы вокруг картинки */
-    border-radius: 12px; /* Закругление для самой картинки */
-    width: 160px; /* Можно задать размер здесь, или оставить width="120" в HTML */
+    display: block;
+    border-radius: 12px;
+    width: 160px;
     height: 160px;
 }
 
@@ -400,7 +389,6 @@
     box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* Предупреждающий бейдж */
 .warning-badge {
     background: linear-gradient(135deg, #ff6b6b, #ee5a24);
     color: white;
@@ -488,31 +476,6 @@
         align-self: center;
     }
 }
+
 </style>
-
-<!-- Font Awesome для иконок -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<script>
-// Добавляем анимации при скролле
-document.addEventListener('DOMContentLoaded', function() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationPlayState = 'running';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Наблюдаем за всеми анимируемыми элементами
-    document.querySelectorAll('.contact-card, .messengers-section, .qr-section, .profile-card')
-        .forEach(el => observer.observe(el));
-});
-</script>
 {% endblock %}
